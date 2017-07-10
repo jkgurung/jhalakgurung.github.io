@@ -1,13 +1,9 @@
-# trevordmiller-website
+# JhalakGurung-website
 
-Deploys to [trevordmiller.com](https://trevordmiller.com)
+Deploys to [jhalakgurung.com](https://jhalakgurung.com)
 
-Trevor's personal website which includes his portfolio, blog, open source project documentation, and whatnot :)
-
-## Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md)
+Jhalak's personal website which includes his portfolio, blog, open source project documentation ...
 
 ## Credit
 
-Programming icons are from [Devicon](http://konpa.github.io/devicon/)
+Modified from [trevordmiller-website](https://github.com/trevordmiller/trevordmiller-website)
