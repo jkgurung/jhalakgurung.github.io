@@ -1,15 +1,14 @@
-export const githubUrl = 'https://github.com/trevordmiller'
+export const githubUrl = 'https://github.com/jkgurung'
 
-export const npmUrl = 'https://www.npmjs.com/~trevordmiller'
+// export const npmUrl = ''
 
-export const twitterUrl = 'https://twitter.com/trevordmiller'
+// export const twitterUrl = ''
 
-export const facebookUrl = 'https://www.facebook.com/trevordmillerpage'
+// export const facebookUrl = ''
 
-export const linkedinUrl = 'https://www.linkedin.com/in/trevordmiller'
+export const linkedinUrl = 'https://www.linkedin.com/in/jkgurung/'
 
-export const rssUrl = 'https://trevordmiller.com/blog/feed'
+// export const rssUrl = ''
 
-export const spotifyUrl = 'https://open.spotify.com/user/trevordmiller'
+// export const spotifyUrl = ''
 
-export const freshlyMarriedUrl = 'https://freshlymarried.com'
