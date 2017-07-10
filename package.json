@@ -1,5 +1,5 @@
 {
-  "name": "trevordmiller-website",
+  "name": "jhalakgurung-website",
   "scripts": {
     "dev": "next",
     "verify": "npm run lint && npm run build",
@@ -40,7 +40,7 @@
     }
   },
   "now": {
-    "alias": "trevordmiller.com"
+    "alias": "jhalakgurung.com"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
