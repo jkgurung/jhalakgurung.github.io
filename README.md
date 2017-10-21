@@ -1,2 +1,2 @@
-# jhalakgurung.github.io
+# jkgurung.github.io
 My Personal Website
