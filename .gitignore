@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 _site/
 .sass-cache/
 .jekyll-metadata
 Gemfile.lock
 *.gem
+=======
+node_modules/
+.DS_Store
+.next/
+>>>>>>> e0ea729042f434ae436a1d23a8fa86013cf98f2f
