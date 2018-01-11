@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jhalak Gurung | Home</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+    <script type="text/paperscript" canvas="myCanvas">
+        var keyData = {
+            q: {
+            sound: new Howl({
+              src: ['./assets/sounds/bubbles.mp3']
+            }),
+            color: '#1abc9c'
+            },
+            w: {
+            sound: new Howl({
+              src: ['./assets/sounds/clay.mp3']
+            }),
+            color: '#2ecc71'
+            },
+            e: {
+            sound: new Howl({
+              src: ['./assets/sounds/confetti.mp3']
+            }),
+            color: '#3498db'
+            },
+            r: {
+            sound: new Howl({
+              src: ['./assets/sounds/corona.mp3']
+            }),
+            color: '#9b59b6'
+            },
+            t: {
+            sound: new Howl({
+              src: ['./assets/sounds/dotted-spiral.mp3']
+            }),
+            color: '#34495e'
+            },
+            y: {
+            sound: new Howl({
+              src: ['./assets/sounds/flash-1.mp3']
+            }),
+            color: '#16a085'
+            },
+            u: {
+            sound: new Howl({
+              src: ['./assets/sounds/flash-2.mp3']
+            }),
+            color: '#27ae60'
+            },
+            i: {
+            sound: new Howl({
+              src: ['./assets/sounds/flash-3.mp3']
+            }),
+            color: '#2980b9'
+            },
+            o: {
+            sound: new Howl({
+            src: ['./assets/sounds/glimmer.mp3']
+            }),
+            color: '#8e44ad'
+            },
+            p: {
+            sound: new Howl({
+              src: ['./assets/sounds/moon.mp3']
+            }),
+            color: '#2c3e50'
+            },
+            a: {
+            sound: new Howl({
+              src: ['./assets/sounds/pinwheel.mp3']
+            }),
+            color: '#f1c40f'
+            },
+            s: {
+            sound: new Howl({
+              src: ['./assets/sounds/piston-1.mp3']
+            }),
+            color: '#e67e22'
+            },
+            d: {
+            sound: new Howl({
+              src: ['./assets/sounds/piston-2.mp3']
+            }),
+            color: '#e74c3c'
+            },
+            f: {
+            sound: new Howl({
+              src: ['./assets/sounds/prism-1.mp3']
+            }),
+            color: '#95a5a6'
+            },
+            g: {
+            sound: new Howl({
+              src: ['./assets/sounds/prism-2.mp3']
+            }),
+            color: '#f39c12'
+            },
+            h: {
+            sound: new Howl({
+              src: ['./assets/sounds/prism-3.mp3']
+            }),
+            color: '#d35400'
+            },
+            j: {
+            sound: new Howl({
+              src: ['./assets/sounds/splits.mp3']
+            }),
+            color: '#1abc9c'
+            },
+            k: {
+            sound: new Howl({
+              src: ['./assets/sounds/squiggle.mp3']
+            }),
+            color: '#2ecc71'
+            },
+            l: {
+            sound: new Howl({
+              src: ['./assets/sounds/strike.mp3']
+            }),
+            color: '#3498db'
+            },
+            z: {
+            sound: new Howl({
+              src: ['./assets/sounds/suspension.mp3']
+            }),
+            color: '#9b59b6'
+            },
+            x: {
+            sound: new Howl({
+              src: ['./assets/sounds/timer.mp3']
+            }),
+            color: '#34495e'
+            },
+            c: {
+            sound: new Howl({
+              src: ['./assets/sounds/ufo.mp3']
+            }),
+            color: '#16a085'
+            },
+            v: {
+            sound: new Howl({
+              src: ['./assets/sounds/veil.mp3']
+            }),
+            color: '#27ae60'
+            },
+            b: {
+            sound: new Howl({
+              src: ['./assets/sounds/wipe.mp3']
+            }),
+            color: '#2980b9'
+            },
+            n: {
+            sound: new Howl({
+            src: ['./assets/sounds/zig-zag.mp3']
+            }),
+            color: '#8e44ad'
+            },
+            m: {
+            sound: new Howl({
+              src: ['./assets/sounds/moon.mp3']
+            }),
+            color: '#2c3e50'
+            }
+        }
+
+        var circles = [];
+
+        function onKeyDown(event) {
+            if(keyData[event.key]) {
+                var maxPoint = new Point(view.size.width, view.size.height);
+                var randomPoint = Point.random();
+                var point = maxPoint * randomPoint;
+                var newCircle = new Path.Circle(point, 500);
+                newCircle.fillColor = keyData[event.key].color;
+                keyData[event.key].sound.play();
+                circles.push(newCircle);
+            }
+        }
+        function onFrame(event){
+            for(var i = 0; i < circles.length; i++){
+              circles[i].scale(0.9);
+              circles[i].fillColor.hue += 1;
+              if(circles[i].area < 1){
+                circles[i].remove();
+                circles.splice(i, 1);
+                i--;
+              }
+            }
+          }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a id="branding" class="navbar-brand" href="./index.html"><h1><span class="highlight">JHALAK K GURUNG</span></h1></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active" id="current">
+                            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" style="color: #ffffff;" href="./assets/about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="color: #ffffff;" href="./assets/projects.html">Projects</a>
+                        </li>
+                        </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section id="showcase">
+        <div class="container">
+            <h1>Hello There!</h1>
+            <p>
+                My name is <strong>Jhalak</strong>. I recently graduated from the <strong>University of  California at Berkeley</strong> with B.S in Electrical Engineering & Computer Science. I'm always excited to learn about new technologies to see how I better <strong>give back to community</strong>.
+            </p>   
+        </div>
+    </section>
+    <section id="resume">
+        <div class='container'>
+            
+            <p id='quote'></p>
+            <p id='author'></p>
+            <button id="button1" class='btn btn-success'>New Quote</button>
+            <a class='btn btn-primary' id='tweet' href='https://twitter.com/share' target='_blank' role='button'><i class="fa fa-twitter"></i> Tweet the Quote</a>
+        </div>
+    </section>
+    <div class="container">
+        <div id="patatapClone">
+            <h2>Pess any keyboard key</h2>
+        </div>
+        <canvas id="myCanvas" resize></canvas>
+    </div>
+    
+
+    <footer>
+        <div id="social">
+            <a class="linkedinBtn smGlobalBtn" href="https://www.linkedin.com/in/jkgurung/" ></a>
+            <a class="githubBtn smGlobalBtn" href="https://github.com/jkgurung" ></a>
+        </div>
+        <p>Copyright &copy; 2018 Jhalak Gurung</p>
+    </footer>
+
+
+    <script type="text/javascript" src="./assets/js/app.js"></script>
+    <!-- jQuery first, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="./assets/js/lib/paper-full.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.7/howler.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+</body>
+</html>
